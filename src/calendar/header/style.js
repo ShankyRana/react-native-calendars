@@ -11,6 +11,7 @@ export default function(theme={}) {
       justifyContent: 'space-between',
       paddingLeft: 10,
       paddingRight: 10,
+      marginTop: 6,
       alignItems: 'center'
     },
     monthText: {
@@ -20,7 +21,8 @@ export default function(theme={}) {
       margin: 10
     },
     arrow: {
-      padding: 10
+      padding: 10,
+      ...appStyle.arrowStyle
     },
     arrowImage: {
       ...Platform.select({
@@ -43,6 +45,7 @@ export default function(theme={}) {
       textAlign: 'center',
       fontSize: appStyle.textDayHeaderFontSize,
       fontFamily: appStyle.textDayHeaderFontFamily,
+      fontWeight: appStyle.textDayHeaderFontWeight,
       color: appStyle.textSectionTitleColor
     },
     ...(theme[STYLESHEET_ID] || {})

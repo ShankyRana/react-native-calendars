@@ -15,8 +15,10 @@ export default function styleConstructor(theme={}) {
       marginTop: Platform.OS === 'android' ? 4 : 6,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
+      fontWeight: appStyle.textDayFontWeight,
       color: appStyle.dayTextColor,
-      backgroundColor: 'rgba(255, 255, 255, 0)'
+      backgroundColor: 'rgba(255, 255, 255, 0)',
+      ...appStyle.textDayStyle
     },
     alignedText: {
       marginTop: Platform.OS === 'android' ? 4 : 6
@@ -26,7 +28,8 @@ export default function styleConstructor(theme={}) {
       borderRadius: 16
     },
     today: {
-      backgroundColor: appStyle.todayBackgroundColor
+      backgroundColor: appStyle.todayBackgroundColor,
+      borderRadius: 16
     },
     todayText: {
       color: appStyle.todayTextColor
@@ -42,7 +45,8 @@ export default function styleConstructor(theme={}) {
       height: 8,
       marginTop: 1,
       borderRadius: 2,
-      opacity: 0
+      opacity: 0,
+      ...appStyle.dotStyle
     },
     visibleDot: {
       opacity: 1,
@@ -50,6 +54,12 @@ export default function styleConstructor(theme={}) {
     },
     selectedDot: {
       backgroundColor: appStyle.selectedDotColor
+    },
+    disabledDot: {
+      backgroundColor: appStyle.disabledDotColor || appStyle.dotColor
+    },
+    todayDot: {
+      backgroundColor: appStyle.todayDotColor || appStyle.dotColor
     },
     ...(theme[STYLESHEET_ID] || {})
   });
