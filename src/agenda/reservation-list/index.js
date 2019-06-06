@@ -161,7 +161,7 @@ class ReactComp extends Component {
     if (!props.reservations || !props.selectedDay) {
       return {reservations: [], scrollPosition: 0};
     }
-    let reservations = his.state.reservations || [];
+    let reservations = this.state.reservations || [];
     if (this.state.reservations && this.state.reservations.length) {
       const iterator = reservations[0].day.clone();
       const lastIterator = reservations[(reservations.length-1)].day.clone();
